@@ -1,0 +1,21 @@
+//Prepare Json object from string values. We can use loop if we have multiple dynamic properties. 
+
+var prop_name = "Address1";
+var prop_val = "House P-152, street 12.";
+var UpdateFieldsRequest = {};
+UpdateFieldsRequest[prop_name] = prop_val;
+
+                                      
+//Assign the Json object to a property of the "body" object. 
+
+var body = JSON.stringify({
+  'phoneNumber': leadinfo,
+  'phoneCode': "1",
+  'agentID': String(agentId),
+  'search': search,
+  'preview': preview,
+  'UpdateFieldsRequest': UpdateFieldsRequest
+});
+
+//Final Output will be as follows. 
+body => {"phoneNumber":"(012) 345-6789","phoneCode":"1","agentID":"100","search":"YES","preview":"NO","UpdateFieldsRequest":{"Address1":"House P-152, street 12."}}
